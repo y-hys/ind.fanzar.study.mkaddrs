@@ -1,0 +1,72 @@
+/* 各種テーブル作成ＳＱＬ */
+
+CREATE TABLE mt_pref (
+	lg_code VARCHAR(6) NOT NULL PRIMARY KEY,
+	pref VARCHAR(10) NOT NULL,
+	pref_kana VARCHAR(50) NULL,
+	pref_roma VARCHAR(50) NULL,
+	efct_date DATE NULL,
+	ablt_date DATE NULL,
+	remarks VARCHAR(256) NULL
+);
+
+CREATE TABLE mt_city (
+	lg_code VARCHAR(6) NOT NULL PRIMARY KEY,
+	pref VARCHAR(10) NOT NULL,
+    pref_kana VARCHAR(50) NULL,
+    pref_roma VARCHAR(50) NULL,
+    county VARCHAR(24) NULL,
+    county_kana VARCHAR(50) NULL,
+    county_roma VARCHAR(100) NULL,
+    city VARCHAR(24) NOT NULL,
+    city_kana VARCHAR(50) NULL,
+    city_roma VARCHAR(100) NULL,
+    ward VARCHAR(24) NULL,
+    ward_kana VARCHAR(50) NULL,
+    ward_roma VARCHAR(100) NULL,
+    efct_date DATE NULL,
+    ablt_date DATE NULL,
+    remarks VARCHAR(256) NULL
+);
+
+CREATE TABLE mt_town (
+    lg_code VARCHAR(6) NOT NULL,
+    machiaza_id VARCHAR(7) NOT NULL,
+    machiaza_type VARCHAR(1) NOT NULL,
+    pref VARCHAR(10) NOT NULL,
+    pref_kana VARCHAR(50) NULL,
+    pref_roma VARCHAR(50) NULL,
+    county VARCHAR(24) NULL,
+    county_kana VARCHAR(50) NULL,
+    county_roma VARCHAR(100) NULL,
+    city VARCHAR(24) NOT NULL,
+    city_kana VARCHAR(50) NULL,
+    city_roma VARCHAR(100) NULL,
+    ward VARCHAR(24) NULL,
+    ward_kana VARCHAR(50) NULL,
+    ward_roma VARCHAR(100) NULL,
+    oaza_cho VARCHAR(120) NULL,
+    oaza_cho_kana VARCHAR(240) NULL,
+    oaza_cho_roma VARCHAR(180) NULL,
+    chome VARCHAR(32) NULL,
+    chome_kana VARCHAR(50) NULL,
+    chome_number VARCHAR(2) NULL,
+    koaza VARCHAR(120) NULL,
+    koaza_kana VARCHAR(240) NULL,
+    koaza_roma VARCHAR(180) NULL,
+    machiaza_dist VARCHAR(120) NULL,
+    rsdt_addr_flg VARCHAR(1) NOT NULL,
+    rsdt_addr_mtd_code VARCHAR(1) NULL,
+    oaza_cho_aka_flg VARCHAR(1) NULL,
+    koaza_aka_code VARCHAR(1) NULL,
+    oaza_cho_gsi_uncmn VARCHAR(50) NULL,
+    koaza_gsi_uncmn VARCHAR(50) NULL,
+    status_flg VARCHAR(1) NULL,
+    wake_num_flg VARCHAR(1) NULL,
+    efct_date DATE NOT NULL,
+    ablt_date DATE NULL,
+    src_code VARCHAR(2) NULL,
+    post_code VARCHAR(80) NULL,
+    remarks VARCHAR(256) NULL,
+    PRIMARY KEY (lg_code, machiaza_id, rsdt_addr_flg, efct_date)
+)

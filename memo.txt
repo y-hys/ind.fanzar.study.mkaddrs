@@ -1,0 +1,8 @@
+以下、ルートディレクトリから実行
+
+* コンパイル(fileimporters)
+  javac -d bin src\clients\fileimporters\Program.java src\domains\parsers\AddressBaseRegistryParser.java src\domains\databases\SQLiteManager.java -cp src
+
+* 実行(fileimporters)
+  java -cp bin;bin\sqlite-jdbc-3.48.0.0.jar clients.fileimporters.Program 都道府県ファイル 市区町村ファイル 町字ファイル
+  ※ 実行には、JDBCドライバが必要です。
